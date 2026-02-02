@@ -100,9 +100,9 @@ export function Header() {
                   </div>
                 </nav>
 
-                <div className="p-6 border-t border-ren-burgundy/30 space-y-3">
+                <div className="p-6 border-t border-ren-burgundy/30 flex flex-col gap-4">
                   <Link to="/login" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-ren-burgundy/30">
+                    <Button variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
                       Einloggen
                     </Button>
                   </Link>
