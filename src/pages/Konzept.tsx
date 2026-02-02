@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Eye, Heart, ArrowRight, AlertTriangle, ShieldOff, UserX, Vote, Wallet, CheckCircle2 } from "lucide-react";
+import { Users, Eye, Heart, ArrowRight, AlertTriangle, ShieldOff, UserX, Vote, Wallet, CheckCircle2, HandHeart, MessageCircle, ThumbsUp, Banknote, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -258,46 +258,90 @@ const Konzept = () => {
         </div>
       </section>
 
-      {/* Detailed Steps */}
-      <section className="py-20 md:py-28 bg-ren-light">
+      {/* Detailed Steps - Modern Timeline */}
+      <section className="py-20 md:py-28 bg-ren-light overflow-hidden">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-card-foreground mb-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3">
+                Schritt für Schritt
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-card-foreground">
                 Der Weg einer Hilfeanfrage
               </h2>
             </div>
 
-            <div className="space-y-6">
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical line for desktop */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-primary to-accent" />
+
               {[
-                { step: 1, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck." },
-                { step: 2, title: "Community prüft", description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen." },
-                { step: 3, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen." },
-                { step: 4, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt." },
-                { step: 5, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen." },
-                { step: 6, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht." },
-              ].map((item) => (
-                <div key={item.step} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                    <span className="text-accent-foreground font-bold">{item.step}</span>
+                { step: 1, icon: HandHeart, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.", color: "bg-accent" },
+                { step: 2, icon: MessageCircle, title: "Community prüft", description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen.", color: "bg-primary" },
+                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.", color: "bg-accent" },
+                { step: 4, icon: ThumbsUp, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt.", color: "bg-primary" },
+                { step: 5, icon: Banknote, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.", color: "bg-accent" },
+                { step: 6, icon: FileCheck, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.", color: "bg-green-500" },
+              ].map((item, index) => (
+                <div 
+                  key={item.step} 
+                  className={`relative flex items-center gap-6 md:gap-0 mb-8 last:mb-0 ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+                >
+                  {/* Mobile line */}
+                  <div className="md:hidden absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 to-transparent last:hidden" />
+                  
+                  {/* Content Card */}
+                  <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
+                    <Card className="bg-card border-0 card-shadow hover:card-shadow-hover transition-all duration-300 group">
+                      <CardContent className="p-6">
+                        <div className={`flex items-start gap-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                          {/* Mobile icon */}
+                          <div className={`md:hidden w-12 h-12 rounded-xl ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <item.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                              <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded-full">
+                                Schritt {item.step}
+                              </span>
+                            </div>
+                            <h3 className="font-bold text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
+                              {item.title}
+                            </h3>
+                            <p className="text-ren-text-secondary text-sm leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                  <div className="pt-2">
-                    <h3 className="font-bold text-card-foreground mb-1">{item.title}</h3>
-                    <p className="text-ren-text-secondary">{item.description}</p>
+
+                  {/* Center icon for desktop */}
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+                    <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center shadow-xl ring-4 ring-ren-light transition-transform hover:scale-110`}>
+                      <item.icon className="w-7 h-7 text-white" />
+                    </div>
                   </div>
+
+                  {/* Empty space for alternating layout */}
+                  <div className="hidden md:block flex-1" />
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-12 space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
               <Link to="/spenden">
-                <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold">
+                <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8">
                   In den Pool spenden
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <Link to="/abstimmung">
-                <Button variant="outline" className="border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent">
+                <Button size="lg" variant="outline" className="border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent px-8">
                   Zu den Abstimmungen
                 </Button>
               </Link>
