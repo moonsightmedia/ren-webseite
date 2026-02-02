@@ -47,7 +47,7 @@ const Konzept = () => {
       <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="inline-block text-secondary-foreground/80 font-semibold text-sm uppercase tracking-wider mb-4">
               Das Konzept
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
@@ -146,8 +146,8 @@ const Konzept = () => {
                 <div className="flex items-center justify-between gap-4">
                   {/* Step 1: Donate */}
                   <div className="flex-1 text-center">
-                    <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
-                      <Heart className="w-10 h-10 text-accent-foreground" />
+                    <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                      <Heart className="w-10 h-10 text-secondary-foreground" />
                     </div>
                     <h3 className="font-bold text-card-foreground mb-1">Spenden</h3>
                     <p className="text-ren-text-secondary text-sm">In den Pool einzahlen</p>
@@ -191,10 +191,10 @@ const Konzept = () => {
               {/* Mobile Flow */}
               <div className="md:hidden space-y-6">
                 {[
-                  { icon: Heart, title: "Spenden", desc: "Sie spenden in den gemeinsamen Pool", color: "bg-accent" },
+                  { icon: Heart, title: "Spenden", desc: "Sie spenden in den gemeinsamen Pool", color: "bg-secondary" },
                   { icon: Wallet, title: "REN-Pool", desc: "Alle Spenden sammeln sich im Topf", color: "bg-ren-teal" },
                   { icon: Vote, title: "Abstimmen", desc: "Community entscheidet über Anfragen", color: "bg-secondary" },
-                  { icon: CheckCircle2, title: "Hilfe", desc: "Geld wird an Genehmigte ausgezahlt", color: "bg-green-500" },
+                  { icon: CheckCircle2, title: "Hilfe", desc: "Geld wird an Genehmigte ausgezahlt", color: "bg-primary" },
                 ].map((step, index) => (
                   <div key={step.title} className="flex gap-4 items-start">
                     <div className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center flex-shrink-0`}>
@@ -226,15 +226,15 @@ const Konzept = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-accent border-0 overflow-hidden">
+              <Card className="bg-primary border-0 overflow-hidden">
                 <CardContent className="p-8 text-center">
-                  <div className="text-6xl md:text-7xl font-bold text-accent-foreground mb-4">
+                  <div className="text-6xl md:text-7xl font-bold text-primary-foreground mb-4">
                     98%
                   </div>
-                  <h3 className="text-xl font-bold text-accent-foreground mb-2">
+                  <h3 className="text-xl font-bold text-primary-foreground mb-2">
                     Direkte Hilfe
                   </h3>
-                  <p className="text-accent-foreground/80 text-sm">
+                  <p className="text-primary-foreground/80 text-sm">
                     Geht über den Pool direkt an genehmigte Hilfeanfragen
                   </p>
                 </CardContent>
@@ -263,7 +263,7 @@ const Konzept = () => {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3">
+              <span className="inline-block text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
                 Schritt für Schritt
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-card-foreground">
@@ -274,15 +274,15 @@ const Konzept = () => {
             {/* Timeline */}
             <div className="relative">
               {/* Vertical line for desktop */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-primary to-accent" />
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary via-primary to-secondary" />
 
               {[
-                { step: 1, icon: HandHeart, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.", color: "bg-accent" },
+                { step: 1, icon: HandHeart, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.", color: "bg-secondary" },
                 { step: 2, icon: MessageCircle, title: "Community prüft", description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen.", color: "bg-primary" },
-                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.", color: "bg-accent" },
+                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.", color: "bg-secondary" },
                 { step: 4, icon: ThumbsUp, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt.", color: "bg-primary" },
-                { step: 5, icon: Banknote, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.", color: "bg-accent" },
-                { step: 6, icon: FileCheck, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.", color: "bg-green-500" },
+                { step: 5, icon: Banknote, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.", color: "bg-secondary" },
+                { step: 6, icon: FileCheck, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.", color: "bg-primary" },
               ].map((item, index) => (
                 <div 
                   key={item.step} 
@@ -291,7 +291,7 @@ const Konzept = () => {
                   }`}
                 >
                   {/* Mobile line */}
-                  <div className="md:hidden absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 to-transparent last:hidden" />
+                  <div className="md:hidden absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-secondary/50 to-transparent last:hidden" />
                   
                   {/* Content Card */}
                   <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
@@ -304,11 +304,11 @@ const Konzept = () => {
                           </div>
                           <div className="flex-1">
                             <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                              <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded-full">
+                              <span className="text-xs font-bold text-secondary bg-secondary/10 px-2 py-1 rounded-full">
                                 Schritt {item.step}
                               </span>
                             </div>
-                            <h3 className="font-bold text-lg text-card-foreground mb-2 group-hover:text-accent transition-colors">
+                            <h3 className="font-bold text-lg text-card-foreground mb-2 group-hover:text-secondary transition-colors">
                               {item.title}
                             </h3>
                             <p className="text-ren-text-secondary text-sm leading-relaxed">
@@ -335,13 +335,13 @@ const Konzept = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
               <Link to="/spenden">
-                <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8">
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8">
                   In den Pool spenden
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <Link to="/abstimmung">
-                <Button size="lg" variant="outline" className="border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent px-8">
+                <Button size="lg" variant="outline" className="border-ren-divider text-card-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-secondary px-8">
                   Zu den Abstimmungen
                 </Button>
               </Link>
