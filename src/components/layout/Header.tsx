@@ -7,7 +7,7 @@ import logoFull from "@/assets/logo-full-white.png";
 
 const navItems = [
   { label: "Das Konzept", href: "/konzept" },
-  { label: "Projekte", href: "/projekte" },
+  { label: "Abstimmung", href: "/abstimmung" },
   { label: "Transparenz", href: "/transparenz" },
   { label: "Hilfe anfragen", href: "/hilfe-anfragen" },
 ];

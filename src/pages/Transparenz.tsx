@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Download, TrendingUp, Heart, Users, Wallet, FileText } from "lucide-react";
 import { transparencyStats, yearlyReports, recentDisbursements } from "@/data/testimonials";
-import { formatCurrency } from "@/data/projects";
+import { formatCurrency } from "@/data/helpRequests";
 
 const Transparenz = () => {
   const adminPercentage = (transparencyStats.adminCosts / transparencyStats.totalDonations) * 100;

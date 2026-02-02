@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Heart, TrendingUp, FileText, Clock, User, LogOut, Settings } from "lucide-react";
-import { formatCurrency } from "@/data/projects";
+import { formatCurrency } from "@/data/helpRequests";
 import { Link } from "react-router-dom";
 
 const mockUserData = {
