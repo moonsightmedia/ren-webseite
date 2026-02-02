@@ -36,18 +36,18 @@ export function HeroSection() {
             98% kommen direkt an.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <Link to="/spenden">
-              <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <Link to="/spenden" className="w-full max-w-md sm:w-auto sm:max-w-none">
+              <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
                 In den Pool spenden
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Link to="/abstimmung">
+            <Link to="/abstimmung" className="w-full max-w-md sm:w-auto sm:max-w-none">
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm"
+                className="w-full sm:w-auto border-2 border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm"
               >
                 Jetzt mitentscheiden
               </Button>
