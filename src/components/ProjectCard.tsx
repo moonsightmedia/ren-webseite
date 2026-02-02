@@ -22,7 +22,7 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ren-dark/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ren-teal/60 via-transparent to-transparent" />
         <div className="absolute bottom-4 left-4">
           <span className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
             {project.location}

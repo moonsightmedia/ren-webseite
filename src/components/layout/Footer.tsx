@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import logoCircle from "@/assets/logo.png";
 
 const footerLinks = {
   navigation: [
@@ -30,16 +31,17 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-ren-dark text-primary-foreground">
+    <footer className="bg-ren-teal text-primary-foreground">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Heart className="w-5 h-5 text-accent-foreground fill-current" />
-              </div>
-              <span className="text-xl font-bold">REN</span>
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <img 
+                src={logoCircle} 
+                alt="REN Logo" 
+                className="w-14 h-14 rounded-full"
+              />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Transparente Hilfe, die ankommt. 98% jeder Spende gehen direkt in Projekte.
@@ -49,7 +51,7 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-lg bg-secondary/50 flex items-center justify-center hover:bg-accent transition-colors group"
+                  className="w-10 h-10 rounded-lg bg-ren-burgundy/30 flex items-center justify-center hover:bg-accent transition-colors group"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4 text-primary-foreground/70 group-hover:text-accent-foreground" />
@@ -116,7 +118,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-secondary/30">
+        <div className="mt-12 pt-8 border-t border-ren-burgundy/30">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/50 text-sm">
               © {new Date().getFullYear()} REN – Gemeinsam helfen. Alle Rechte vorbehalten.

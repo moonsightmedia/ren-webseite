@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, ArrowRight, Eye, EyeOff } from "lucide-react";
+import { ArrowRight, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logoCircle from "@/assets/logo.png";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,9 +18,11 @@ const Login = () => {
         <div className="container">
           <div className="max-w-md mx-auto">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-accent-foreground fill-current" />
-              </div>
+              <img 
+                src={logoCircle} 
+                alt="REN Logo" 
+                className="w-20 h-20 rounded-full mx-auto mb-4"
+              />
               <h1 className="text-2xl font-bold text-card-foreground">Willkommen bei REN</h1>
             </div>
 
@@ -56,7 +59,7 @@ const Login = () => {
                     <div className="text-right">
                       <a href="#" className="text-sm text-accent hover:underline">Passwort vergessen?</a>
                     </div>
-                    <Button className="w-full bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold py-6">
+                    <Button className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6">
                       Einloggen
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -85,7 +88,7 @@ const Login = () => {
                       <Label htmlFor="confirm-password">Passwort bestätigen</Label>
                       <Input id="confirm-password" type="password" placeholder="••••••••" />
                     </div>
-                    <Button className="w-full bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold py-6">
+                    <Button className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6">
                       Registrieren
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>

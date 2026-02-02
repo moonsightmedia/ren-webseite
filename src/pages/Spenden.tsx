@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Heart, Check, CreditCard, Building } from "lucide-react";
 import { useState } from "react";
+import logoCircle from "@/assets/logo.png";
 
 const presetAmounts = [10, 25, 50, 100, 250];
 
@@ -39,7 +40,7 @@ const Spenden = () => {
               </p>
               <Button 
                 onClick={() => setSubmitted(false)} 
-                className="bg-accent hover:bg-ren-cta-hover text-accent-foreground"
+                className="bg-accent hover:bg-ren-red-hover text-accent-foreground"
               >
                 Erneut spenden
               </Button>
@@ -53,12 +54,14 @@ const Spenden = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-16 md:py-24">
+      <section className="bg-ren-teal py-16 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-8 h-8 text-accent-foreground fill-current" />
-            </div>
+            <img 
+              src={logoCircle} 
+              alt="REN Logo" 
+              className="w-20 h-20 rounded-full mx-auto mb-6"
+            />
             <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Jetzt spenden
             </h1>
@@ -88,7 +91,7 @@ const Spenden = () => {
                           variant={amount === preset ? "default" : "outline"}
                           onClick={() => setAmount(preset)}
                           className={amount === preset 
-                            ? "bg-accent hover:bg-ren-cta-hover text-accent-foreground" 
+                            ? "bg-accent hover:bg-ren-red-hover text-accent-foreground" 
                             : "border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
                           }
                         >
@@ -102,7 +105,7 @@ const Spenden = () => {
                         variant={amount === "custom" ? "default" : "outline"}
                         onClick={() => setAmount("custom")}
                         className={amount === "custom" 
-                          ? "bg-accent hover:bg-ren-cta-hover text-accent-foreground" 
+                          ? "bg-accent hover:bg-ren-red-hover text-accent-foreground" 
                           : "border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
                         }
                       >
@@ -179,7 +182,7 @@ const Spenden = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold py-6 text-lg"
+                    className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6 text-lg"
                     disabled={displayAmount <= 0}
                   >
                     <Heart className="w-5 h-5 mr-2" />

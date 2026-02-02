@@ -4,7 +4,7 @@ import { formatCurrency } from "@/data/projects";
 
 export function TrustSection() {
   return (
-    <section className="py-20 md:py-28 bg-ren-dark">
+    <section className="py-20 md:py-28 bg-ren-teal">
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">

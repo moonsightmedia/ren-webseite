@@ -2,89 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* REN Design System - Premium Charity Aesthetic */
+/* REN Design System - Premium Charity Aesthetic
+   Color Palette:
+   - Deep Teal: #093C49
+   - Action Red: #E52F12
+   - Warm Burgundy: #783343
+   - Soft White: #FBFBFB
+*/
 
 @layer base {
   :root {
-    /* Primary Dark (Hero/Footer) - #0A0630 */
-    --background: 249 79% 11%;
+    /* Deep Teal - Primary Dark (Hero/Footer) - #093C49 */
+    --background: 192 78% 16%;
     --foreground: 0 0% 100%;
 
-    /* Cards & Light sections */
+    /* Cards & Light sections - Soft White #FBFBFB */
     --card: 0 0% 100%;
-    --card-foreground: 249 79% 11%;
+    --card-foreground: 192 78% 16%;
 
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 249 79% 11%;
+    --popover-foreground: 192 78% 16%;
 
-    /* Primary - Dark blue #0A0630 */
-    --primary: 249 79% 11%;
+    /* Primary - Deep Teal #093C49 */
+    --primary: 192 78% 16%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary Dark - #272357 */
-    --secondary: 244 44% 24%;
+    /* Secondary - Warm Burgundy #783343 */
+    --secondary: 346 40% 34%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted - Light background #F9F9F9 */
+    /* Muted - Light background #FBFBFB */
     --muted: 0 0% 98%;
-    --muted-foreground: 240 4% 46%;
+    --muted-foreground: 192 30% 35%;
 
-    /* Accent - CTA Red #8E1E2D */
-    --accent: 352 65% 34%;
+    /* Accent - Action Red #E52F12 */
+    --accent: 8 85% 48%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border/Divider - #E6E6EB */
-    --border: 240 14% 92%;
-    --input: 240 14% 92%;
-    --ring: 352 65% 34%;
+    /* Border/Divider */
+    --border: 192 15% 88%;
+    --input: 192 15% 88%;
+    --ring: 8 85% 48%;
 
     --radius: 0.75rem;
 
     /* Custom REN Colors */
-    --ren-dark: 249 79% 11%;
-    --ren-dark-secondary: 244 44% 24%;
-    --ren-cta: 352 65% 34%;
-    --ren-cta-hover: 352 52% 47%;
+    --ren-teal: 192 78% 16%;
+    --ren-burgundy: 346 40% 34%;
+    --ren-red: 8 85% 48%;
+    --ren-red-hover: 8 85% 42%;
     --ren-light: 0 0% 98%;
-    --ren-divider: 240 14% 92%;
-    --ren-text-secondary: 240 4% 46%;
+    --ren-divider: 192 15% 88%;
+    --ren-text-secondary: 192 20% 45%;
 
     /* Sidebar */
-    --sidebar-background: 249 79% 11%;
+    --sidebar-background: 192 78% 16%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 352 65% 34%;
+    --sidebar-primary: 8 85% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 244 44% 24%;
+    --sidebar-accent: 346 40% 34%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 244 44% 24%;
-    --sidebar-ring: 352 65% 34%;
+    --sidebar-border: 192 50% 25%;
+    --sidebar-ring: 8 85% 48%;
   }
 
   .dark {
-    --background: 249 79% 11%;
+    --background: 192 78% 16%;
     --foreground: 0 0% 100%;
-    --card: 244 44% 24%;
+    --card: 346 40% 34%;
     --card-foreground: 0 0% 100%;
-    --popover: 244 44% 24%;
+    --popover: 346 40% 34%;
     --popover-foreground: 0 0% 100%;
     --primary: 0 0% 100%;
-    --primary-foreground: 249 79% 11%;
-    --secondary: 244 44% 24%;
+    --primary-foreground: 192 78% 16%;
+    --secondary: 346 40% 34%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 244 44% 24%;
-    --muted-foreground: 240 14% 80%;
-    --accent: 352 65% 34%;
+    --muted: 192 50% 25%;
+    --muted-foreground: 192 15% 75%;
+    --accent: 8 85% 48%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
-    --border: 244 44% 24%;
-    --input: 244 44% 24%;
-    --ring: 352 65% 34%;
+    --border: 192 50% 25%;
+    --input: 192 50% 25%;
+    --ring: 8 85% 48%;
   }
 }
 
@@ -110,19 +116,19 @@
   .hero-gradient {
     background: linear-gradient(
       180deg,
-      hsl(var(--ren-dark)) 0%,
-      hsl(var(--ren-dark) / 0.95) 50%,
-      hsl(var(--ren-dark) / 0.85) 100%
+      hsl(var(--ren-teal)) 0%,
+      hsl(var(--ren-teal) / 0.95) 50%,
+      hsl(var(--ren-teal) / 0.85) 100%
     );
   }
 
   .card-shadow {
-    box-shadow: 0 4px 20px -2px hsl(var(--ren-dark) / 0.08),
-                0 2px 8px -2px hsl(var(--ren-dark) / 0.04);
+    box-shadow: 0 4px 20px -2px hsl(var(--ren-teal) / 0.08),
+                0 2px 8px -2px hsl(var(--ren-teal) / 0.04);
   }
 
   .card-shadow-hover {
-    box-shadow: 0 8px 30px -4px hsl(var(--ren-dark) / 0.12),
-                0 4px 12px -2px hsl(var(--ren-dark) / 0.06);
+    box-shadow: 0 8px 30px -4px hsl(var(--ren-teal) / 0.12),
+                0 4px 12px -2px hsl(var(--ren-teal) / 0.06);
   }
 }
