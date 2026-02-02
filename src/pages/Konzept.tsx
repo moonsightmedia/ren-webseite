@@ -110,11 +110,11 @@ const Konzept = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {solutions.map((solution) => (
-                <Card key={solution.title} className="bg-card border-0 card-shadow text-center">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
-                      <solution.icon className="w-8 h-8 text-accent" />
-                    </div>
+              <Card key={solution.title} className="bg-card border-0 card-shadow text-center">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <solution.icon className="w-8 h-8 text-primary" />
+                  </div>
                     <h3 className="text-xl font-bold text-card-foreground mb-3">
                       {solution.title}
                     </h3>
