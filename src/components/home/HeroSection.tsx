@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { PoolDisplay } from "@/components/PoolDisplay";
 import logoFull from "@/assets/logo-full.png";
 
 export function HeroSection() {
@@ -18,11 +19,11 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="container relative z-10 py-20 md:py-32">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-ren-burgundy/30 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
             <img src={logoFull} alt="REN" className="h-6 w-auto" />
             <span className="text-sm font-medium text-primary-foreground/90">
-              98% gehen direkt in Hilfe
+              Demokratisch entscheiden, direkt helfen
             </span>
           </div>
 
@@ -31,25 +32,31 @@ export function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            Gemeinsam helfen, direkt und transparent. Jede Spende macht einen echten Unterschied.
+            Spenden Sie in den gemeinsamen Pool. Die Community entscheidet, wer Hilfe erhält. 
+            98% kommen direkt an.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <Link to="/spenden">
               <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
-                Jetzt spenden
+                In den Pool spenden
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Link to="/hilfe-anfragen">
+            <Link to="/abstimmung">
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm"
+                className="border-2 border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm"
               >
-                Hilfe anfragen
+                Jetzt mitentscheiden
               </Button>
             </Link>
+          </div>
+
+          {/* Pool Display */}
+          <div className="max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <PoolDisplay variant="hero" showCTA={false} />
           </div>
         </div>
       </div>

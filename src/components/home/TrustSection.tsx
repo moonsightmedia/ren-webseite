@@ -1,6 +1,6 @@
 import { Heart, TrendingUp, Users } from "lucide-react";
 import { transparencyStats } from "@/data/testimonials";
-import { formatCurrency } from "@/data/projects";
+import { formatCurrency } from "@/data/helpRequests";
 
 export function TrustSection() {
   return (
