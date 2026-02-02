@@ -31,7 +31,7 @@ export function ProjectsSection() {
 
         <div className="text-center">
           <Link to="/projekte">
-            <Button variant="outline" size="lg" className="border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent group">
+            <Button variant="outline" size="lg" className="border-ren-divider bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent group">
               Alle Projekte ansehen
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>

@@ -12,9 +12,9 @@
 
 @layer base {
   :root {
-    /* Deep Teal - Primary Dark (Hero/Footer) - #093C49 */
-    --background: 192 78% 16%;
-    --foreground: 0 0% 100%;
+    /* Background - Soft White #FBFBFB for page background */
+    --background: 0 0% 98%;
+    --foreground: 192 78% 16%;
 
     /* Cards & Light sections - Soft White #FBFBFB */
     --card: 0 0% 100%;
