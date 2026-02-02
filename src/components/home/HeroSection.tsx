@@ -6,7 +6,7 @@ import logoFull from "@/assets/logo-full.png";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pb-24 md:pb-32">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -61,8 +61,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll indicator - hidden on mobile to avoid overlap */}
+      <div className="absolute bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
         <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
           <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
         </div>

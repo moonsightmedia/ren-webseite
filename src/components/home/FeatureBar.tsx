@@ -20,7 +20,7 @@ const features = [
 
 export function FeatureBar() {
   return (
-    <section className="relative z-10 -mt-16 md:-mt-20">
+    <section className="relative z-10 -mt-8 md:-mt-20">
       <div className="container">
         <div className="bg-card rounded-2xl card-shadow p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0">
