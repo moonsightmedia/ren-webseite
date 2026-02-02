@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import logoFull from "@/assets/logo-full.png";
 
 export function HeroSection() {
   return (
@@ -18,8 +19,8 @@ export function HeroSection() {
       {/* Content */}
       <div className="container relative z-10 py-20 md:py-32">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/30 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
-            <Heart className="w-4 h-4 text-accent fill-current" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ren-burgundy/30 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
+            <img src={logoFull} alt="REN" className="h-6 w-auto" />
             <span className="text-sm font-medium text-primary-foreground/90">
               98% gehen direkt in Hilfe
             </span>
@@ -35,7 +36,7 @@ export function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <Link to="/spenden">
-              <Button size="lg" className="bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
+              <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
                 Jetzt spenden
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

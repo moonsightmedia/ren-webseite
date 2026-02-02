@@ -22,7 +22,7 @@ const ctaCards = [
 
 export function CTASection() {
   return (
-    <section className="py-20 md:py-28 bg-secondary">
+    <section className="py-20 md:py-28 bg-ren-burgundy">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {ctaCards.map((cta) => (
@@ -41,7 +41,7 @@ export function CTASection() {
                 </p>
                 
                 <Link to={cta.link}>
-                  <Button className="bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold group/btn">
+                  <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold group/btn">
                     {cta.buttonText}
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
                   </Button>

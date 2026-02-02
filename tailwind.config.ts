@@ -62,10 +62,10 @@ export default {
         },
         // REN Custom Colors
         ren: {
-          dark: "hsl(var(--ren-dark))",
-          "dark-secondary": "hsl(var(--ren-dark-secondary))",
-          cta: "hsl(var(--ren-cta))",
-          "cta-hover": "hsl(var(--ren-cta-hover))",
+          teal: "hsl(var(--ren-teal))",
+          burgundy: "hsl(var(--ren-burgundy))",
+          red: "hsl(var(--ren-red))",
+          "red-hover": "hsl(var(--ren-red-hover))",
           light: "hsl(var(--ren-light))",
           divider: "hsl(var(--ren-divider))",
           "text-secondary": "hsl(var(--ren-text-secondary))",
