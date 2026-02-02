@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import logoCircle from "@/assets/logo.png";
+import logoSymbol from "@/assets/logo-symbol.png";
 
 const footerLinks = {
   navigation: [
@@ -36,12 +36,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <img 
-                src={logoCircle} 
-                alt="REN Logo" 
-                className="w-14 h-14 rounded-full"
+                src={logoSymbol} 
+                alt="REN" 
+                className="h-12 w-auto"
               />
+              <span className="text-2xl font-bold text-primary-foreground tracking-wide">REN</span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Transparente Hilfe, die ankommt. 98% jeder Spende gehen direkt in Projekte.
