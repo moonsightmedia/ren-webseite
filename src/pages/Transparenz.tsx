@@ -178,7 +178,7 @@ const Transparenz = () => {
                       <p>Einnahmen: {formatCurrency(report.donations)}</p>
                       <p>Ausgezahlt: {formatCurrency(report.disbursed)}</p>
                     </div>
-                    <Button variant="outline" className="w-full border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
+                    <Button variant="outline" className="w-full border-secondary-foreground text-secondary-foreground bg-secondary-foreground/10 hover:bg-secondary-foreground/20">
                       <Download className="w-4 h-4 mr-2" />
                       PDF herunterladen
                     </Button>
