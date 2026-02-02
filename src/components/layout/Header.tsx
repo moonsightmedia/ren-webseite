@@ -27,7 +27,7 @@ export function Header() {
             <img 
               src={logoFull} 
               alt="REN" 
-              className="h-8 md:h-10 w-auto transition-transform group-hover:scale-105"
+              className="h-6 md:h-7 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
