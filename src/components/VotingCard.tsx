@@ -63,7 +63,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
             </p>
             <div className="flex justify-between items-center text-sm mb-2">
               <div className="flex items-center gap-2">
-                <ThumbsUp className="w-4 h-4 text-green-500" />
+                <ThumbsUp className="w-4 h-4 text-primary" />
                 <span>{request.votesFor}</span>
               </div>
               <span className="font-semibold">{votePercentage}%</span>
@@ -102,7 +102,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
             </p>
             <div className="flex justify-between items-center text-sm mb-2">
               <div className="flex items-center gap-2">
-                <ThumbsUp className="w-4 h-4 text-green-500" />
+              <ThumbsUp className="w-4 h-4 text-primary" />
                 <span>{localVotesFor}</span>
               </div>
               <span className="font-semibold">{votePercentage}% Zustimmung</span>
@@ -154,7 +154,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
           </p>
           <div className="flex justify-between items-center text-sm mb-2">
             <div className="flex items-center gap-2">
-              <ThumbsUp className="w-4 h-4 text-green-500" />
+              <ThumbsUp className="w-4 h-4 text-primary" />
               <span>{localVotesFor}</span>
             </div>
             <span className="font-semibold">{votePercentage}% Zustimmung</span>

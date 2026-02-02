@@ -97,7 +97,7 @@ export function HelpRequestCard({ request, variant = "default" }: HelpRequestCar
           <div className="space-y-3 mb-5">
             <div className="flex justify-between items-center text-sm">
               <div className="flex items-center gap-2">
-                <ThumbsUp className="w-4 h-4 text-green-500" />
+                <ThumbsUp className="w-4 h-4 text-primary" />
                 <span className="text-ren-text-secondary">{request.votesFor}</span>
               </div>
               <span className="font-semibold text-card-foreground">
