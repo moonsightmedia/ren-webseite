@@ -3,24 +3,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { PoolDisplay } from "@/components/PoolDisplay";
 import logoFull from "@/assets/logo-full.png";
-
 export function HeroSection() {
-  return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80"
-          alt="Menschen, die sich helfen"
-          className="w-full h-full object-cover"
-        />
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80" alt="Menschen, die sich helfen" className="w-full h-full object-cover" />
         <div className="absolute inset-0 hero-gradient" />
       </div>
 
       {/* Content */}
       <div className="container relative z-10 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ren-burgundy/30 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 backdrop-blur-sm rounded-full mb-8 animate-fade-in bg-secondary">
             <img src={logoFull} alt="REN" className="h-6 w-auto" />
             <span className="text-sm font-medium text-primary-foreground/90">
               Demokratisch entscheiden, direkt helfen
@@ -31,12 +25,16 @@ export function HeroSection() {
             Menschlichkeit in Aktion
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-xl mx-auto animate-fade-in-up" style={{
+          animationDelay: "0.1s"
+        }}>
             Spenden Sie in den gemeinsamen Pool. Die Community entscheidet, wer Hilfe erhält. 
             98% kommen direkt an.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{
+          animationDelay: "0.2s"
+        }}>
             <Link to="/spenden">
               <Button size="lg" className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-8 py-6 text-base h-auto">
                 In den Pool spenden
@@ -44,18 +42,16 @@ export function HeroSection() {
               </Button>
             </Link>
             <Link to="/abstimmung">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm"
-              >
+              <Button size="lg" variant="outline" className="border-2 border-primary-foreground bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 px-8 py-6 text-base h-auto backdrop-blur-sm">
                 Jetzt mitentscheiden
               </Button>
             </Link>
           </div>
 
           {/* Pool Display */}
-          <div className="max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="max-w-xl mx-auto animate-fade-in-up" style={{
+          animationDelay: "0.3s"
+        }}>
             <PoolDisplay variant="hero" showCTA={false} />
           </div>
         </div>
@@ -67,6 +63,5 @@ export function HeroSection() {
           <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
