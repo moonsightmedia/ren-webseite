@@ -74,7 +74,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
             </div>
             <Progress 
               value={votePercentage} 
-              className="h-2 bg-red-200 [&>div]:bg-green-500" 
+              className="h-2 bg-muted [&>div]:bg-primary" 
             />
           </div>
         </CardContent>
@@ -113,7 +113,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
             </div>
             <Progress 
               value={votePercentage} 
-              className="h-2 bg-red-200 [&>div]:bg-green-500" 
+              className="h-2 bg-muted [&>div]:bg-primary" 
             />
           </div>
         </CardContent>
@@ -165,7 +165,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
           </div>
           <Progress 
             value={votePercentage} 
-            className="h-2 bg-red-200 [&>div]:bg-green-500" 
+            className="h-2 bg-muted [&>div]:bg-primary" 
           />
         </div>
       </CardContent>
