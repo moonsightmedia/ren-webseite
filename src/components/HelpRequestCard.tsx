@@ -110,7 +110,7 @@ export function HelpRequestCard({ request, variant = "default" }: HelpRequestCar
             </div>
             <Progress 
               value={votePercentage} 
-              className="h-2 bg-red-200 [&>div]:bg-green-500" 
+              className="h-2 bg-muted [&>div]:bg-primary" 
             />
             <p className="text-xs text-center text-ren-text-secondary">
               {totalVotes} Stimmen abgegeben
