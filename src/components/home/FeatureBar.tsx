@@ -27,7 +27,7 @@ export function FeatureBar() {
             {features.map((feature, index) => (
               <div 
                 key={feature.title} 
-                className={`flex items-center justify-center gap-4 ${
+                className={`flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-center md:text-left ${
                   index !== features.length - 1 ? "md:border-r md:border-ren-divider" : ""
                 }`}
               >
