@@ -13,7 +13,7 @@ const Transparenz = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-20 md:py-28">
+      <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -159,7 +159,7 @@ const Transparenz = () => {
       </section>
 
       {/* Yearly Reports */}
-      <section className="py-12 md:py-20 bg-ren-dark">
+      <section className="py-12 md:py-20 bg-ren-teal">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground text-center mb-10">

@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout";
 const AGB = () => {
   return (
     <Layout>
-      <section className="bg-ren-dark py-16 md:py-20">
+      <section className="bg-ren-teal py-16 md:py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground">

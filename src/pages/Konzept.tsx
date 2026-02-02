@@ -33,7 +33,7 @@ const Konzept = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-20 md:py-28">
+      <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -114,7 +114,7 @@ const Konzept = () => {
       </section>
 
       {/* 98/2 Model */}
-      <section className="py-20 md:py-28 bg-ren-dark">
+      <section className="py-20 md:py-28 bg-ren-teal">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -191,7 +191,7 @@ const Konzept = () => {
 
             <div className="text-center mt-12">
               <Link to="/projekte">
-                <Button className="bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold">
+                <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold">
                   Projekte ansehen
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

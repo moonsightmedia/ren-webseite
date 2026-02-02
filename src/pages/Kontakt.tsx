@@ -33,7 +33,7 @@ const Kontakt = () => {
               </p>
               <Button 
                 onClick={() => setSubmitted(false)} 
-                className="bg-accent hover:bg-ren-cta-hover text-accent-foreground"
+                className="bg-accent hover:bg-ren-red-hover text-accent-foreground"
               >
                 Weitere Nachricht senden
               </Button>
@@ -47,7 +47,7 @@ const Kontakt = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-20 md:py-28">
+      <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -160,7 +160,7 @@ const Kontakt = () => {
 
                       <Button 
                         type="submit" 
-                        className="w-full bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold py-6"
+                        className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6"
                       >
                         Nachricht senden
                       </Button>

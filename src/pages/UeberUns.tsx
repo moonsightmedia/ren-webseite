@@ -29,7 +29,7 @@ const UeberUns = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-20 md:py-28">
+      <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -134,7 +134,7 @@ const UeberUns = () => {
       </section>
 
       {/* Team placeholder */}
-      <section className="py-20 md:py-28 bg-ren-dark">
+      <section className="py-20 md:py-28 bg-ren-teal">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary-foreground mb-4">

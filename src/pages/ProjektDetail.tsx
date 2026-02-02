@@ -17,7 +17,7 @@ const ProjektDetail = () => {
           <div className="container text-center">
             <h1 className="text-3xl font-bold text-card-foreground mb-4">Projekt nicht gefunden</h1>
             <Link to="/projekte">
-              <Button className="bg-accent hover:bg-ren-cta-hover text-accent-foreground">
+              <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground">
                 Zurück zu allen Projekten
               </Button>
             </Link>
@@ -39,7 +39,7 @@ const ProjektDetail = () => {
           alt={project.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ren-dark via-ren-dark/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ren-teal via-ren-teal/50 to-transparent" />
         
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="container">
@@ -124,7 +124,7 @@ const ProjektDetail = () => {
                   </div>
 
                   <Link to="/spenden">
-                    <Button className="w-full bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold py-6 text-base">
+                    <Button className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6 text-base">
                       <Heart className="w-5 h-5 mr-2" />
                       Jetzt spenden
                     </Button>
