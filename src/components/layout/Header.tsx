@@ -3,7 +3,7 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoFull from "@/assets/logo-full-white.png";
 
 const navItems = [
   { label: "Das Konzept", href: "/konzept" },
@@ -23,13 +23,12 @@ export function Header() {
       <div className="container">
         <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="group">
             <img 
-              src={logoSymbol} 
+              src={logoFull} 
               alt="REN" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
+              className="h-8 md:h-10 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-xl font-bold text-primary-foreground tracking-wide">REN</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -73,13 +72,12 @@ export function Header() {
               <SheetTitle className="sr-only">Navigation</SheetTitle>
               <div className="flex flex-col h-full">
                 <div className="p-6 border-b border-ren-burgundy/30">
-                  <Link to="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                  <Link to="/" onClick={() => setIsOpen(false)}>
                     <img 
-                      src={logoSymbol} 
+                      src={logoFull} 
                       alt="REN" 
-                      className="h-10 w-auto"
+                      className="h-8 w-auto"
                     />
-                    <span className="text-xl font-bold text-primary-foreground tracking-wide">REN</span>
                   </Link>
                 </div>
 
