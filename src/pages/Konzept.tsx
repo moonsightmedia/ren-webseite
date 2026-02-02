@@ -3,46 +3,34 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Users, Eye, Heart, ArrowRight, AlertTriangle, ShieldOff, UserX, Vote, Wallet, CheckCircle2, HandHeart, MessageCircle, ThumbsUp, Banknote, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const problems = [
-  {
-    icon: ShieldOff,
-    title: "Vertrauensdefizit",
-    description: "Spender wissen oft nicht, wie und wo ihre Mittel tatsächlich verwendet werden. Fehlende Transparenz führt zu Misstrauen.",
-  },
-  {
-    icon: UserX,
-    title: "Entscheidungsprozesse",
-    description: "Entscheidungen über die Verwendung von Spendengeldern liegen bei wenigen Organisationen – nicht bei der Gemeinschaft.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Missbrauchsrisiken",
-    description: "Direkte Überweisungen an Hilfesuchende sind anfällig für Fehlverwendung. Es fehlt an Kontrolle und Nachverfolgung.",
-  },
-];
-
-const solutions = [
-  {
-    icon: Heart,
-    title: "98% direkte Hilfe",
-    description: "Nur 2% fließen in notwendige Verwaltung. Jeder Euro zählt und wird transparent dokumentiert.",
-  },
-  {
-    icon: Eye,
-    title: "Volle Transparenz",
-    description: "Öffentlicher Pool-Stand, detaillierte Anfragen-Dokumentation, nachverfolgbare Auszahlungen.",
-  },
-  {
-    icon: Vote,
-    title: "Demokratische Abstimmung",
-    description: "Die Community entscheidet gemeinsam, welche Hilfeanfragen Geld aus dem Pool erhalten.",
-  },
-];
-
+const problems = [{
+  icon: ShieldOff,
+  title: "Vertrauensdefizit",
+  description: "Spender wissen oft nicht, wie und wo ihre Mittel tatsächlich verwendet werden. Fehlende Transparenz führt zu Misstrauen."
+}, {
+  icon: UserX,
+  title: "Entscheidungsprozesse",
+  description: "Entscheidungen über die Verwendung von Spendengeldern liegen bei wenigen Organisationen – nicht bei der Gemeinschaft."
+}, {
+  icon: AlertTriangle,
+  title: "Missbrauchsrisiken",
+  description: "Direkte Überweisungen an Hilfesuchende sind anfällig für Fehlverwendung. Es fehlt an Kontrolle und Nachverfolgung."
+}];
+const solutions = [{
+  icon: Heart,
+  title: "98% direkte Hilfe",
+  description: "Nur 2% fließen in notwendige Verwaltung. Jeder Euro zählt und wird transparent dokumentiert."
+}, {
+  icon: Eye,
+  title: "Volle Transparenz",
+  description: "Öffentlicher Pool-Stand, detaillierte Anfragen-Dokumentation, nachverfolgbare Auszahlungen."
+}, {
+  icon: Vote,
+  title: "Demokratische Abstimmung",
+  description: "Die Community entscheidet gemeinsam, welche Hilfeanfragen Geld aus dem Pool erhalten."
+}];
 const Konzept = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero */}
       <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
@@ -75,8 +63,7 @@ const Konzept = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {problems.map((problem) => (
-                <Card key={problem.title} className="bg-card border-0 card-shadow">
+              {problems.map(problem => <Card key={problem.title} className="bg-card border-0 card-shadow">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center mx-auto mb-4">
                       <problem.icon className="w-7 h-7 text-destructive" />
@@ -88,8 +75,7 @@ const Konzept = () => {
                       {problem.description}
                     </p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -109,8 +95,7 @@ const Konzept = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {solutions.map((solution) => (
-              <Card key={solution.title} className="bg-card border-0 card-shadow text-center">
+              {solutions.map(solution => <Card key={solution.title} className="bg-card border-0 card-shadow text-center">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <solution.icon className="w-8 h-8 text-primary" />
@@ -122,8 +107,7 @@ const Konzept = () => {
                       {solution.description}
                     </p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -146,7 +130,7 @@ const Konzept = () => {
                 <div className="flex items-center justify-between gap-4">
                   {/* Step 1: Donate */}
                   <div className="flex-1 text-center">
-                    <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 bg-secondary">
                       <Heart className="w-10 h-10 text-accent-foreground" />
                     </div>
                     <h3 className="font-bold text-card-foreground mb-1">Spenden</h3>
@@ -179,7 +163,7 @@ const Konzept = () => {
 
                   {/* Step 4: Help */}
                   <div className="flex-1 text-center">
-                    <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary">
                       <CheckCircle2 className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="font-bold text-card-foreground mb-1">Hilfe</h3>
@@ -190,13 +174,27 @@ const Konzept = () => {
 
               {/* Mobile Flow */}
               <div className="md:hidden space-y-6">
-                {[
-                  { icon: Heart, title: "Spenden", desc: "Sie spenden in den gemeinsamen Pool", color: "bg-accent" },
-                  { icon: Wallet, title: "REN-Pool", desc: "Alle Spenden sammeln sich im Topf", color: "bg-ren-teal" },
-                  { icon: Vote, title: "Abstimmen", desc: "Community entscheidet über Anfragen", color: "bg-secondary" },
-                  { icon: CheckCircle2, title: "Hilfe", desc: "Geld wird an Genehmigte ausgezahlt", color: "bg-green-500" },
-                ].map((step, index) => (
-                  <div key={step.title} className="flex gap-4 items-start">
+                {[{
+                icon: Heart,
+                title: "Spenden",
+                desc: "Sie spenden in den gemeinsamen Pool",
+                color: "bg-accent"
+              }, {
+                icon: Wallet,
+                title: "REN-Pool",
+                desc: "Alle Spenden sammeln sich im Topf",
+                color: "bg-ren-teal"
+              }, {
+                icon: Vote,
+                title: "Abstimmen",
+                desc: "Community entscheidet über Anfragen",
+                color: "bg-secondary"
+              }, {
+                icon: CheckCircle2,
+                title: "Hilfe",
+                desc: "Geld wird an Genehmigte ausgezahlt",
+                color: "bg-green-500"
+              }].map((step, index) => <div key={step.title} className="flex gap-4 items-start">
                     <div className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center flex-shrink-0`}>
                       <step.icon className="w-6 h-6 text-white" />
                     </div>
@@ -204,8 +202,7 @@ const Konzept = () => {
                       <h3 className="font-bold text-card-foreground">{step.title}</h3>
                       <p className="text-ren-text-secondary text-sm">{step.desc}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -276,20 +273,43 @@ const Konzept = () => {
               {/* Vertical line for desktop */}
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-primary to-accent" />
 
-              {[
-                { step: 1, icon: HandHeart, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.", color: "bg-accent" },
-                { step: 2, icon: MessageCircle, title: "Community prüft", description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen.", color: "bg-primary" },
-                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.", color: "bg-accent" },
-                { step: 4, icon: ThumbsUp, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt.", color: "bg-primary" },
-                { step: 5, icon: Banknote, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.", color: "bg-accent" },
-                { step: 6, icon: FileCheck, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.", color: "bg-green-500" },
-              ].map((item, index) => (
-                <div 
-                  key={item.step} 
-                  className={`relative flex items-center gap-6 md:gap-0 mb-8 last:mb-0 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
+              {[{
+              step: 1,
+              icon: HandHeart,
+              title: "Hilfe wird angefragt",
+              description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.",
+              color: "bg-accent"
+            }, {
+              step: 2,
+              icon: MessageCircle,
+              title: "Community prüft",
+              description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen.",
+              color: "bg-primary"
+            }, {
+              step: 3,
+              icon: Vote,
+              title: "Abstimmung läuft",
+              description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.",
+              color: "bg-accent"
+            }, {
+              step: 4,
+              icon: ThumbsUp,
+              title: "Mehrheit entscheidet",
+              description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt.",
+              color: "bg-primary"
+            }, {
+              step: 5,
+              icon: Banknote,
+              title: "Auszahlung aus dem Pool",
+              description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.",
+              color: "bg-accent"
+            }, {
+              step: 6,
+              icon: FileCheck,
+              title: "Transparente Dokumentation",
+              description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.",
+              color: "bg-green-500"
+            }].map((item, index) => <div key={item.step} className={`relative flex items-center gap-6 md:gap-0 mb-8 last:mb-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Mobile line */}
                   <div className="md:hidden absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 to-transparent last:hidden" />
                   
@@ -329,8 +349,7 @@ const Konzept = () => {
 
                   {/* Empty space for alternating layout */}
                   <div className="hidden md:block flex-1" />
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
@@ -349,8 +368,6 @@ const Konzept = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Konzept;
