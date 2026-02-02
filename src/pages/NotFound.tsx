@@ -24,7 +24,7 @@ const NotFound = () => {
               Die gesuchte Seite existiert leider nicht.
             </p>
             <Link to="/">
-              <Button className="bg-accent hover:bg-ren-cta-hover text-accent-foreground font-semibold">
+              <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold">
                 <Home className="w-4 h-4 mr-2" />
                 Zurück zur Startseite
               </Button>

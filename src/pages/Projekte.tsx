@@ -20,7 +20,7 @@ const Projekte = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-ren-dark py-20 md:py-28">
+      <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
@@ -51,8 +51,8 @@ const Projekte = () => {
                   size="sm"
                   onClick={() => setCategoryFilter(cat)}
                   className={categoryFilter === cat 
-                    ? "bg-accent hover:bg-ren-cta-hover text-accent-foreground" 
-                    : "border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                    ? "bg-accent hover:bg-ren-red-hover text-accent-foreground" 
+                    : "border-ren-divider bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
                   }
                 >
                   {cat === "alle" ? "Alle" : categoryLabels[cat]}
@@ -69,8 +69,8 @@ const Projekte = () => {
                   size="sm"
                   onClick={() => setStatusFilter(status)}
                   className={statusFilter === status 
-                    ? "bg-accent hover:bg-ren-cta-hover text-accent-foreground" 
-                    : "border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                    ? "bg-accent hover:bg-ren-red-hover text-accent-foreground" 
+                    : "border-ren-divider bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent"
                   }
                 >
                   {status === "alle" ? "Alle" : statusLabels[status]}

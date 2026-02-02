@@ -53,10 +53,9 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
 
         <Link to={`/projekte/${project.id}`} className="block mt-5">
           <Button 
-            variant="outline" 
-            className="w-full border-ren-divider text-card-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all group/btn"
+            className="w-full bg-ren-teal hover:bg-accent text-primary-foreground hover:text-accent-foreground transition-all group/btn"
           >
-            Projekt ansehen
+            Jetzt unterstützen
             <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
           </Button>
         </Link>
