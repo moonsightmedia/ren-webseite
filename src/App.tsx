@@ -11,6 +11,7 @@ import Transparenz from "./pages/Transparenz";
 import HilfeAnfragen from "./pages/HilfeAnfragen";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
 import UeberUns from "./pages/UeberUns";
 import Kontakt from "./pages/Kontakt";
 import Spenden from "./pages/Spenden";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/hilfe-anfragen" element={<HilfeAnfragen />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/einstellungen" element={<Settings />} />
           <Route path="/ueber-uns" element={<UeberUns />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/spenden" element={<Spenden />} />

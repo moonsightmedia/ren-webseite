@@ -44,10 +44,12 @@ const Dashboard = () => {
               <p className="text-ren-text-secondary">Willkommen in Ihrem persönlichen Bereich</p>
             </div>
             <div className="flex gap-3">
-              <Button variant="outline" className="border-ren-divider text-card-foreground">
-                <Settings className="w-4 h-4 mr-2" />
-                Einstellungen
-              </Button>
+              <Link to="/einstellungen">
+                <Button variant="outline" className="border-ren-divider text-card-foreground">
+                  <Settings className="w-4 h-4 mr-2" />
+                  Einstellungen
+                </Button>
+              </Link>
               <Button variant="outline" className="border-ren-divider text-card-foreground">
                 <LogOut className="w-4 h-4 mr-2" />
                 Ausloggen
