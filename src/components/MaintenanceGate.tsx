@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import MaintenanceScreen, { isMaintenanceUnlocked } from "@/pages/MaintenanceScreen";
 
-const MAINTENANCE_MODE = import.meta.env.VITE_MAINTENANCE_MODE === "true";
+// Wartungsmodus AN, wenn nicht explizit "false" (z. B. auf Domain ohne .env)
+const MAINTENANCE_MODE = import.meta.env.VITE_MAINTENANCE_MODE !== "false";
 const MAINTENANCE_PASSWORD = import.meta.env.VITE_MAINTENANCE_PASSWORD ?? "ren-dev";
 
 type MaintenanceGateProps = {
