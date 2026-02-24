@@ -12,7 +12,7 @@ const footerLinks = {
   hilfe: [
     { label: "Hilfe anfragen", href: "/hilfe-anfragen" },
     { label: "Spenden", href: "/spenden" },
-    { label: "Über REN", href: "/ueber-uns" },
+    { label: "Geschichte", href: "/geschichte" },
     { label: "Kontakt", href: "/kontakt" },
   ],
   rechtliches: [
@@ -100,11 +100,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm">kontakt@ren-hilft.de</span>
+                <span className="text-primary-foreground/70 text-sm">info@ren-org.de</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm">+49 (0) 30 12345678</span>
+                <span className="text-primary-foreground/70 text-sm">+49 1514 1474511</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />

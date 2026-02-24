@@ -2,13 +2,15 @@ import { Layout } from "@/components/layout";
 import { HelpRequestCard } from "@/components/HelpRequestCard";
 import { PoolDisplay } from "@/components/PoolDisplay";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { helpRequests, statusLabels } from "@/data/helpRequests";
+import { statusLabels } from "@/data/helpRequests";
+import { useHelpRequests } from "@/contexts/HelpRequestsContext";
 
 const Abstimmung = () => {
-  const openRequests = helpRequests.filter((r) => r.status === "offen");
-  const approvedRequests = helpRequests.filter((r) => r.status === "genehmigt");
-  const completedRequests = helpRequests.filter((r) => r.status === "abgeschlossen");
-  const rejectedRequests = helpRequests.filter((r) => r.status === "abgelehnt");
+  const { requests } = useHelpRequests();
+  const openRequests = requests.filter((r) => r.status === "offen");
+  const approvedRequests = requests.filter((r) => r.status === "genehmigt");
+  const completedRequests = requests.filter((r) => r.status === "abgeschlossen");
+  const rejectedRequests = requests.filter((r) => r.status === "abgelehnt");
 
   return (
     <Layout>

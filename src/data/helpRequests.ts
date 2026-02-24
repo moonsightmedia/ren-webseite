@@ -3,7 +3,7 @@ export interface HelpRequest {
   title: string;
   description: string;
   category: "bildung" | "nothilfe" | "infrastruktur" | "gesundheit";
-  status: "offen" | "genehmigt" | "abgelehnt" | "abgeschlossen";
+  status: "eingereicht" | "offen" | "genehmigt" | "abgelehnt" | "abgeschlossen";
   requestedAmount: number;
   disbursedAmount?: number;
   votesFor: number;
@@ -155,6 +155,48 @@ export const helpRequests: HelpRequest[] = [
     requestedBy: "Nepal School Foundation",
     requestedAt: "2025-11-10T10:00:00Z",
   },
+  {
+    id: "lesefoerderung-bibliothek",
+    title: "Leseförderung in Stadtbibliothek",
+    description: "Bücher und Lese-Ecken für benachteiligte Kinder in der Stadtbibliothek.",
+    category: "bildung",
+    status: "eingereicht",
+    requestedAmount: 4500,
+    votesFor: 0,
+    votesAgainst: 0,
+    votingEndsAt: "2026-12-31T23:59:59Z",
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
+    location: "Deutschland",
+    details: "Viele Kinder haben zu Hause keine Bücher. Wir richten Lese-Ecken ein und kaufen aktuelle Kinderbücher, damit alle Zugang zu Lesestoff haben.",
+    usage: [
+      { label: "Kinderbücher", amount: 2500 },
+      { label: "Möbel Lese-Ecken", amount: 1500 },
+      { label: "Workshops", amount: 500 },
+    ],
+    requestedBy: "Stadtbibliothek Musterstadt",
+    requestedAt: "2026-02-20T14:00:00Z",
+  },
+  {
+    id: "warmes-essen-tafel",
+    title: "Warmes Essen für Tafel-Besucher",
+    description: "Tägliche warme Mahlzeiten für Bedürftige an der örtlichen Tafel.",
+    category: "nothilfe",
+    status: "eingereicht",
+    requestedAmount: 6000,
+    votesFor: 0,
+    votesAgainst: 0,
+    votingEndsAt: "2026-12-31T23:59:59Z",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80",
+    location: "Deutschland",
+    details: "Die Tafel versorgt viele Menschen mit Lebensmitteln. Für warme Mahlzeiten fehlt jedoch die Küchenausstattung. Mit dieser Spende können wir täglich kochen.",
+    usage: [
+      { label: "Küchenausstattung", amount: 3000 },
+      { label: "Lebensmittel", amount: 2500 },
+      { label: "Honorar Koch", amount: 500 },
+    ],
+    requestedBy: "Tafel e.V. Region Mitte",
+    requestedAt: "2026-02-22T09:30:00Z",
+  },
 ];
 
 export const categoryLabels: Record<HelpRequest["category"], string> = {
@@ -165,6 +207,7 @@ export const categoryLabels: Record<HelpRequest["category"], string> = {
 };
 
 export const statusLabels: Record<HelpRequest["status"], string> = {
+  eingereicht: "Eingereicht",
   offen: "Zur Abstimmung",
   genehmigt: "Genehmigt",
   abgelehnt: "Abgelehnt",

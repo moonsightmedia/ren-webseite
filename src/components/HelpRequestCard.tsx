@@ -24,31 +24,32 @@ export function HelpRequestCard({ request, variant = "default" }: HelpRequestCar
   const isVotingOpen = request.status === "offen";
 
   const getStatusBadge = () => {
+    const base = "inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-full bg-black/50 text-white backdrop-blur-sm";
     switch (request.status) {
       case "offen":
         return (
-          <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-500/20 text-blue-600 text-xs font-semibold rounded-full">
+          <span className={base}>
             <Clock className="w-3 h-3" />
             {timeRemaining}
           </span>
         );
       case "genehmigt":
         return (
-          <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-500/20 text-green-600 text-xs font-semibold rounded-full">
+          <span className={base}>
             <CheckCircle2 className="w-3 h-3" />
             {statusLabels[request.status]}
           </span>
         );
       case "abgelehnt":
         return (
-          <span className="inline-flex items-center gap-1 px-3 py-1 bg-red-500/20 text-red-600 text-xs font-semibold rounded-full">
+          <span className={base}>
             <XCircle className="w-3 h-3" />
             {statusLabels[request.status]}
           </span>
         );
       case "abgeschlossen":
         return (
-          <span className="inline-flex items-center gap-1 px-3 py-1 bg-accent/20 text-accent text-xs font-semibold rounded-full">
+          <span className={base}>
             <CheckCircle2 className="w-3 h-3" />
             {statusLabels[request.status]}
           </span>

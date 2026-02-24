@@ -8,12 +8,56 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Heart, Shield, Users, Check } from "lucide-react";
 import { useState } from "react";
+import { useHelpRequests } from "@/contexts/HelpRequestsContext";
+import type { HelpRequest } from "@/data/helpRequests";
+
+const FORM_TYPE_TO_CATEGORY: Record<string, HelpRequest["category"]> = {
+  finanziell: "nothilfe",
+  miete: "nothilfe",
+  lebensmittel: "nothilfe",
+  medizinisch: "gesundheit",
+  bildung: "bildung",
+  sonstiges: "nothilfe",
+};
+
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80";
 
 const HilfeAnfragen = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [helpType, setHelpType] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
+  const [anonymous, setAnonymous] = useState(false);
+  const { addRequest } = useHelpRequests();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const requestedAmount = Math.max(0, Number(amount) || 0);
+    const desc = description.trim() || "Anfrage ohne Beschreibung";
+    const title =
+      desc.length > 60 ? desc.slice(0, 57) + "..." : desc || "Anfrage vom " + new Date().toLocaleDateString("de-DE");
+    const category = (helpType && FORM_TYPE_TO_CATEGORY[helpType]) || "nothilfe";
+
+    const newRequest: HelpRequest = {
+      id: "anfrage-" + Date.now(),
+      title,
+      description: desc,
+      details: desc,
+      category,
+      status: "eingereicht",
+      requestedAmount,
+      votesFor: 0,
+      votesAgainst: 0,
+      votingEndsAt: "2099-12-31T23:59:59Z",
+      image: DEFAULT_IMAGE,
+      location: "Deutschland",
+      usage: requestedAmount > 0 ? [{ label: "Unterstützung", amount: requestedAmount }] : [{ label: "Unterstützung", amount: 0 }],
+      requestedBy: anonymous || !name.trim() ? "Anonym" : name.trim(),
+      requestedAt: new Date().toISOString(),
+    };
+    addRequest(newRequest);
     setSubmitted(true);
   };
 
@@ -113,17 +157,17 @@ const HilfeAnfragen = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name (optional)</Label>
-                      <Input id="name" placeholder="Ihr Name" />
+                      <Input id="name" placeholder="Ihr Name" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">E-Mail *</Label>
-                      <Input id="email" type="email" placeholder="ihre@email.de" required />
+                      <Input id="email" type="email" placeholder="ihre@email.de" required value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="type">Art der Hilfe *</Label>
-                    <Select required>
+                    <Select required value={helpType} onValueChange={setHelpType}>
                       <SelectTrigger>
                         <SelectValue placeholder="Bitte wählen" />
                       </SelectTrigger>
@@ -140,21 +184,23 @@ const HilfeAnfragen = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="description">Beschreibung Ihrer Situation *</Label>
-                    <Textarea 
-                      id="description" 
+                    <Textarea
+                      id="description"
                       placeholder="Bitte beschreiben Sie Ihre Situation und warum Sie Hilfe benötigen..."
                       className="min-h-[150px]"
                       required
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
                     />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="amount">Benötigte Summe (ungefähr)</Label>
-                    <Input id="amount" type="number" placeholder="z.B. 500" />
+                    <Input id="amount" type="number" placeholder="z.B. 500" value={amount} onChange={(e) => setAmount(e.target.value)} />
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <Checkbox id="anonymous" />
+                    <Checkbox id="anonymous" checked={anonymous} onCheckedChange={(c) => setAnonymous(!!c)} />
                     <div className="space-y-1">
                       <Label htmlFor="anonymous" className="cursor-pointer">Anonym bleiben</Label>
                       <p className="text-sm text-ren-text-secondary">

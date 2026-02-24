@@ -92,7 +92,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
             </div>
             <h3 className="font-bold text-card-foreground mb-2">Danke für Ihre Stimme!</h3>
             <p className="text-ren-text-secondary text-sm">
-              Sie haben mit {userVote === "for" ? "Ja" : "Nein"} gestimmt.
+              Sie haben „{userVote === "for" ? "Direkt unterstützen" : "Zurückstellen"}“ gewählt.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
               <ThumbsUp className="w-4 h-4 text-primary" />
                 <span>{localVotesFor}</span>
               </div>
-              <span className="font-semibold">{votePercentage}% Zustimmung</span>
+              <span className="font-semibold">{votePercentage}% Direkt unterstützen</span>
               <div className="flex items-center gap-2">
                 <span>{localVotesAgainst}</span>
                 <ThumbsDown className="w-4 h-4 text-red-500" />
@@ -125,26 +125,26 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
     <Card className="bg-card border-0 card-shadow">
       <CardContent className="p-6">
         <h3 className="font-bold text-card-foreground text-center mb-2">
-          Soll diese Anfrage Geld erhalten?
+          Wie möchten Sie abstimmen?
         </h3>
         <p className="text-ren-text-secondary text-sm text-center mb-6">
-          Ihre Stimme entscheidet mit, ob diese Hilfeanfrage aus dem Pool finanziert wird.
+          Ihre Stimme entscheidet mit, ob diese Hilfeanfrage jetzt aus dem Pool finanziert wird.
         </p>
 
         <div className="grid grid-cols-2 gap-4 mb-6">
           <Button
             onClick={() => handleVote("for")}
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-6"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-6 text-sm"
           >
-            <ThumbsUp className="w-5 h-5 mr-2" />
-            Ja
+            <ThumbsUp className="w-5 h-5 mr-2 flex-shrink-0" />
+            Direkt unterstützen
           </Button>
           <Button
             onClick={() => handleVote("against")}
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-6"
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-6 text-sm"
           >
-            <ThumbsDown className="w-5 h-5 mr-2" />
-            Nein
+            <ThumbsDown className="w-5 h-5 mr-2 flex-shrink-0" />
+            Zurückstellen
           </Button>
         </div>
 
@@ -157,7 +157,7 @@ export function VotingCard({ request, isLoggedIn = false, onVote }: VotingCardPr
               <ThumbsUp className="w-4 h-4 text-primary" />
               <span>{localVotesFor}</span>
             </div>
-            <span className="font-semibold">{votePercentage}% Zustimmung</span>
+            <span className="font-semibold">{votePercentage}% Direkt unterstützen</span>
             <div className="flex items-center gap-2">
               <span>{localVotesAgainst}</span>
               <ThumbsDown className="w-4 h-4 text-red-500" />

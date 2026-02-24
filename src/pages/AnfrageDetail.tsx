@@ -5,19 +5,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import { VotingCard } from "@/components/VotingCard";
 import { PoolDisplay } from "@/components/PoolDisplay";
 import { ArrowLeft, MapPin, Clock, User, Calendar } from "lucide-react";
-import { 
-  getHelpRequestById, 
-  formatCurrency, 
+import {
+  formatCurrency,
   getTimeRemaining,
-  categoryLabels, 
-  statusLabels 
+  categoryLabels,
+  statusLabels,
 } from "@/data/helpRequests";
+import { useHelpRequests } from "@/contexts/HelpRequestsContext";
 
 const AnfrageDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const request = id ? getHelpRequestById(id) : undefined;
+  const { getRequestById } = useHelpRequests();
+  const request = id ? getRequestById(id) : undefined;
+  const notFound = !request || request.status === "eingereicht";
 
-  if (!request) {
+  if (notFound) {
     return (
       <Layout>
         <section className="py-20 md:py-28 bg-ren-light">
@@ -126,8 +128,8 @@ const AnfrageDetail = () => {
                   <h3 className="font-bold text-secondary-foreground mb-4">Wie funktioniert die Abstimmung?</h3>
                   <div className="space-y-3 text-secondary-foreground/80 text-sm">
                     <p>• Alle registrierten Nutzer können abstimmen</p>
-                    <p>• Bei einer Mehrheit von "Ja"-Stimmen wird die Anfrage genehmigt</p>
-                    <p>• Nach Genehmigung wird der Betrag aus dem REN-Pool ausgezahlt</p>
+                    <p>• Bei einer Mehrheit von „Direkt unterstützen“-Stimmen wird die Anfrage genehmigt</p>
+                    <p>• Nach Genehmigung wird die Rechnung direkt aus dem REN-Pool bezahlt</p>
                     <p>• Die Verwendung wird transparent dokumentiert</p>
                   </div>
                 </CardContent>
@@ -173,7 +175,7 @@ const AnfrageDetail = () => {
                       <div className="flex justify-between text-sm">
                         <span className="text-ren-text-secondary">Abstimmungsergebnis:</span>
                         <span className="font-semibold text-card-foreground">
-                          {request.votesFor} Ja / {request.votesAgainst} Nein
+                          {request.votesFor} Direkt unterstützen / {request.votesAgainst} Zurückstellen
                         </span>
                       </div>
                     </div>

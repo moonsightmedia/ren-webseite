@@ -31,7 +31,7 @@ const solutions = [
   {
     icon: Eye,
     title: "Volle Transparenz",
-    description: "Öffentlicher Pool-Stand, detaillierte Anfragen-Dokumentation, nachverfolgbare Auszahlungen.",
+    description: "Öffentlicher Pool-Stand, detaillierte Anfragen-Dokumentation, nachverfolgbare Rechnungszahlungen.",
   },
   {
     icon: Vote,
@@ -47,7 +47,7 @@ const Konzept = () => {
       <section className="bg-ren-teal py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block text-secondary-foreground/80 font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
               Das Konzept
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
@@ -183,7 +183,7 @@ const Konzept = () => {
                       <CheckCircle2 className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="font-bold text-card-foreground mb-1">Hilfe</h3>
-                    <p className="text-ren-text-secondary text-sm">Geld wird ausgezahlt</p>
+                    <p className="text-ren-text-secondary text-sm">Rechnung wird bezahlt</p>
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@ const Konzept = () => {
                   { icon: Heart, title: "Spenden", desc: "Sie spenden in den gemeinsamen Pool", color: "bg-secondary" },
                   { icon: Wallet, title: "REN-Pool", desc: "Alle Spenden sammeln sich im Topf", color: "bg-ren-teal" },
                   { icon: Vote, title: "Abstimmen", desc: "Community entscheidet über Anfragen", color: "bg-secondary" },
-                  { icon: CheckCircle2, title: "Hilfe", desc: "Geld wird an Genehmigte ausgezahlt", color: "bg-primary" },
+                  { icon: CheckCircle2, title: "Hilfe", desc: "Rechnung wird bezahlt", color: "bg-primary" },
                 ].map((step, index) => (
                   <div key={step.title} className="flex gap-4 items-start">
                     <div className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center flex-shrink-0`}>
@@ -206,6 +206,58 @@ const Konzept = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wie funktionieren die Abstimmungen bei REN? */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-10 text-center">
+              Wie funktionieren die Abstimmungen bei REN?
+            </h2>
+            <div className="space-y-6 text-secondary-foreground/90 leading-relaxed text-lg">
+              <p>
+                REN basiert auf einem einfachen, aber kraftvollen Gedanken:
+              </p>
+              <p className="font-semibold text-secondary-foreground text-xl">
+                Nächstenliebe.
+              </p>
+              <p>
+                Jede Anfrage, die bei REN gestellt wird, entsteht aus einer echten Lebenssituation. Hinter jeder Anfrage steht ein Mensch, eine Familie oder ein Herzensprojekt. Deshalb wird bei REN niemals über den Wert eines Menschen abgestimmt.
+              </p>
+              <p>
+                Doch echte Nächstenliebe bedeutet auch Verantwortung. Unsere finanziellen Mittel sind begrenzt. Damit Hilfe nachhaltig wirken kann, entscheidet die Gemeinschaft gemeinsam, wo im aktuellen Moment am meisten Unterstützung möglich ist.
+              </p>
+              <p>
+                Statt „Ja“ oder „Nein“ gibt es bei REN deshalb zwei klare Entscheidungen:
+              </p>
+            </div>
+
+            <div className="mt-10 space-y-10">
+              <div>
+                <h3 className="text-xl font-bold text-secondary-foreground mb-3">
+                  Direkt unterstützen
+                </h3>
+                <p className="text-secondary-foreground/80 mb-2 font-medium">Das bedeutet:</p>
+                <p className="text-secondary-foreground/90 leading-relaxed">
+                  Wir tragen diese Anfrage gemeinsam. Die Gemeinschaft entscheidet, jetzt zu helfen, und die verfügbaren Mittel werden entsprechend eingesetzt.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-secondary-foreground mb-3">
+                  Zurückstellen
+                </h3>
+                <p className="text-secondary-foreground/80 mb-2 font-medium">Das bedeutet:</p>
+                <p className="text-secondary-foreground/90 leading-relaxed">
+                  Diese Anfrage wird im Moment noch nicht finanziert. Nicht, weil sie unwichtig ist. Nicht, weil sie abgelehnt wird.
+                </p>
+                <p className="text-secondary-foreground/90 leading-relaxed mt-2">
+                  Sondern weil wir verantwortungsvoll handeln und unsere Mittel so einsetzen müssen, dass Hilfe langfristig möglich bleibt.
+                </p>
               </div>
             </div>
           </div>
@@ -278,10 +330,10 @@ const Konzept = () => {
 
               {[
                 { step: 1, icon: HandHeart, title: "Hilfe wird angefragt", description: "Menschen in Not stellen eine Anfrage mit konkretem Betrag und Verwendungszweck.", color: "bg-secondary" },
-                { step: 2, icon: MessageCircle, title: "Community prüft", description: "Die REN-Community prüft und diskutiert die Anfrage. Jeder kann Fragen stellen.", color: "bg-primary" },
-                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit Ja oder Nein abstimmen.", color: "bg-secondary" },
-                { step: 4, icon: ThumbsUp, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von Ja-Stimmen wird die Anfrage genehmigt.", color: "bg-primary" },
-                { step: 5, icon: Banknote, title: "Auszahlung aus dem Pool", description: "Der angefragte Betrag wird aus dem Pool an die Hilfesuchenden überwiesen.", color: "bg-secondary" },
+                { step: 2, icon: MessageCircle, title: "Lenny prüft", description: "Lenny prüft und entscheidet, ob das Projekt valide ist und zur Abstimmung bekannt gegeben wird.", color: "bg-primary" },
+                { step: 3, icon: Vote, title: "Abstimmung läuft", description: "Für einen festgelegten Zeitraum können alle Mitglieder mit „Direkt unterstützen“ oder „Zurückstellen“ abstimmen.", color: "bg-secondary" },
+                { step: 4, icon: ThumbsUp, title: "Mehrheit entscheidet", description: "Bei einer Mehrheit von „Direkt unterstützen“-Stimmen wird die Anfrage genehmigt.", color: "bg-primary" },
+                { step: 5, icon: Banknote, title: "Rechnung wird bezahlt", description: "Es gibt keine Auszahlung an Hilfesuchende – die Rechnung wird immer direkt aus dem Pool bezahlt. So ist sichergestellt, dass das Geld wirklich ankommt.", color: "bg-secondary" },
                 { step: 6, icon: FileCheck, title: "Transparente Dokumentation", description: "Die Verwendung wird dokumentiert und für alle einsehbar veröffentlicht.", color: "bg-primary" },
               ].map((item, index) => (
                 <div 

@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { User, Lock, Bell, ArrowLeft, Save, Eye, EyeOff } from "lucide-react";
+import { User, Lock, Bell, ArrowLeft, Save, Eye, EyeOff, UserX } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -24,6 +24,8 @@ const Settings = () => {
     email: "max@beispiel.de",
     phone: "+49 123 456789",
   });
+
+  const [profileAnonymous, setProfileAnonymous] = useState(false);
 
   const [notifications, setNotifications] = useState({
     emailNewProjects: true,
@@ -144,6 +146,24 @@ const Settings = () => {
                       onChange={(e) =>
                         setProfileData({ ...profileData, phone: e.target.value })
                       }
+                    />
+                  </div>
+
+                  <Separator />
+
+                  <div className="flex items-center justify-between rounded-lg border border-ren-divider p-4">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center gap-2">
+                        <UserX className="w-4 h-4 text-ren-text-secondary" />
+                        <Label className="text-base">Profil anonym halten</Label>
+                      </div>
+                      <p className="text-sm text-ren-text-secondary">
+                        Ihr Name und Ihre Spenden werden nicht öffentlich angezeigt. Die Zuordnung zu Ihrem Konto erfolgt nur intern für Ihr Dashboard und Spendenquittungen.
+                      </p>
+                    </div>
+                    <Switch
+                      checked={profileAnonymous}
+                      onCheckedChange={setProfileAnonymous}
                     />
                   </div>
 

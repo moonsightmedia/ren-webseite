@@ -36,8 +36,8 @@ const Impressum = () => {
               <div>
                 <h2 className="text-xl font-bold text-card-foreground mb-4">Kontakt</h2>
                 <p className="text-ren-text-secondary">
-                  Telefon: +49 (0) 30 12345678<br />
-                  E-Mail: kontakt@ren-hilft.de
+                  Telefon: +49 1514 1474511<br />
+                  E-Mail: info@ren-org.de
                 </p>
               </div>
 

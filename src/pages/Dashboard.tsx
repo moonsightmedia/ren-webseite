@@ -2,23 +2,32 @@ import { Layout } from "@/components/layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { Heart, TrendingUp, FileText, Clock, User, LogOut, Settings } from "lucide-react";
 import { formatCurrency } from "@/data/helpRequests";
 import { Link } from "react-router-dom";
+
+const poolContributions = [
+  { date: "2024-01-15", amount: 200 },
+  { date: "2024-01-02", amount: 300 },
+  { date: "2023-12-20", amount: 250 },
+  { date: "2023-11-10", amount: 500 },
+];
+
+const distributionShare = [
+  { project: "Schulessen für Kinder", disbursedAt: "2024-01-15", amount: 50 },
+  { project: "Brunnenbau in Afrika", disbursedAt: "2024-01-02", amount: 100 },
+  { project: "Winterhilfe für Obdachlose", disbursedAt: "2023-12-20", amount: 75 },
+  { project: "Nothilfe für Familien", disbursedAt: "2023-11-10", amount: 200 },
+];
 
 const mockUserData = {
   name: "Max Mustermann",
   email: "max@beispiel.de",
   memberSince: "Januar 2023",
-  totalDonated: 1250,
-  projectsSupported: 4,
-  donations: [
-    { date: "2024-01-15", project: "Schulessen für Kinder", amount: 50 },
-    { date: "2024-01-02", project: "Brunnenbau in Afrika", amount: 100 },
-    { date: "2023-12-20", project: "Winterhilfe für Obdachlose", amount: 75 },
-    { date: "2023-11-10", project: "Nothilfe für Familien", amount: 200 },
-  ],
+  totalDonated: poolContributions.reduce((sum, c) => sum + c.amount, 0),
+  projectsSupported: distributionShare.length,
+  poolContributions,
+  distributionShare,
   requests: [
     { 
       id: 1, 
@@ -109,10 +118,10 @@ const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Donation History */}
+            {/* Donation History – Pool-Modell */}
             <Card className="bg-card border-0 card-shadow">
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-bold text-card-foreground">Ihre Spenden</h2>
                   <Link to="/transparenz">
                     <Button variant="ghost" size="sm" className="text-accent">
@@ -120,19 +129,50 @@ const Dashboard = () => {
                     </Button>
                   </Link>
                 </div>
-                <div className="space-y-4">
-                  {mockUserData.donations.map((donation, index) => (
-                    <div 
-                      key={index} 
-                      className="flex items-center justify-between py-3 border-b border-ren-divider last:border-0"
+                <p className="text-sm text-ren-text-secondary mb-6">
+                  Ihr Geld fließt in den REN-Pool. Die angezeigten Beträge bei Projekten sind Ihr
+                  anteiliger Beitrag aus dem Pool bei der jeweiligen Verteilung.
+                </p>
+
+                <h3 className="text-sm font-semibold text-card-foreground mb-3">
+                  Ihre Einzahlungen in den Pool
+                </h3>
+                <div className="space-y-3 mb-6">
+                  {mockUserData.poolContributions.map((contribution, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between py-2 border-b border-ren-divider last:border-0"
+                    >
+                      <p className="text-sm text-ren-text-secondary">
+                        {new Date(contribution.date).toLocaleDateString("de-DE")} – in den Pool
+                      </p>
+                      <span className="font-semibold text-card-foreground">
+                        {formatCurrency(contribution.amount)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <h3 className="text-sm font-semibold text-card-foreground mb-3">
+                  Ihr Anteil an der Verteilung
+                </h3>
+                <p className="text-xs text-ren-text-secondary mb-3">
+                  Bei jeder Verteilung wurde folgender Anteil aus Ihren Einzahlungen diesen Projekten
+                  zugeordnet:
+                </p>
+                <div className="space-y-3">
+                  {mockUserData.distributionShare.map((share, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between py-2 border-b border-ren-divider last:border-0"
                     >
                       <div>
-                        <p className="font-medium text-card-foreground">{donation.project}</p>
-                        <p className="text-sm text-ren-text-secondary">
-                          {new Date(donation.date).toLocaleDateString("de-DE")}
+                        <p className="font-medium text-card-foreground text-sm">{share.project}</p>
+                        <p className="text-xs text-ren-text-secondary">
+                          {new Date(share.disbursedAt).toLocaleDateString("de-DE")}
                         </p>
                       </div>
-                      <span className="font-bold text-accent">{formatCurrency(donation.amount)}</span>
+                      <span className="font-bold text-accent">{formatCurrency(share.amount)}</span>
                     </div>
                   ))}
                 </div>

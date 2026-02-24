@@ -5,12 +5,25 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import logoCircle from "@/assets/logo.png";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const redirect = searchParams.get("redirect") ?? "/dashboard";
+  const { login } = useAuth();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    const email = emailRef.current?.value?.trim();
+    login(email);
+    navigate(redirect, { replace: true });
+  };
 
   return (
     <Layout>
@@ -35,34 +48,39 @@ const Login = () => {
                   </TabsList>
 
                   <TabsContent value="login" className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="login-email">E-Mail</Label>
-                      <Input id="login-email" type="email" placeholder="ihre@email.de" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="login-password">Passwort</Label>
-                      <div className="relative">
-                        <Input 
-                          id="login-password" 
-                          type={showPassword ? "text" : "password"} 
-                          placeholder="••••••••" 
-                        />
-                        <button 
-                          type="button"
-                          onClick={() => setShowPassword(!showPassword)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-ren-text-secondary hover:text-card-foreground"
-                        >
-                          {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                        </button>
+                    <form id="login-form" onSubmit={handleLogin} className="space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="login-email">E-Mail</Label>
+                        <Input ref={emailRef} id="login-email" type="email" placeholder="ihre@email.de" />
                       </div>
-                    </div>
-                    <div className="text-right">
-                      <a href="#" className="text-sm text-accent hover:underline">Passwort vergessen?</a>
-                    </div>
-                    <Button className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6">
-                      Einloggen
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                      <div className="space-y-2">
+                        <Label htmlFor="login-password">Passwort</Label>
+                        <div className="relative">
+                          <Input
+                            id="login-password"
+                            type={showPassword ? "text" : "password"}
+                            placeholder="••••••••"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-ren-text-secondary hover:text-card-foreground"
+                          >
+                            {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <a href="#" className="text-sm text-accent hover:underline">Passwort vergessen?</a>
+                      </div>
+                      <Button
+                        type="submit"
+                        className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold py-6"
+                      >
+                        Einloggen
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </form>
                   </TabsContent>
 
                   <TabsContent value="register" className="space-y-4">

@@ -1,12 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import logoFull from "@/assets/logo-full-white.png";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navItems = [
   { label: "Das Konzept", href: "/konzept" },
+  { label: "Geschichte", href: "/geschichte" },
   { label: "Abstimmung", href: "/abstimmung" },
   { label: "Transparenz", href: "/transparenz" },
   { label: "Hilfe anfragen", href: "/hilfe-anfragen" },
@@ -15,8 +17,16 @@ const navItems = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isLoggedIn, isAdmin, logout } = useAuth();
 
   const isActive = (href: string) => location.pathname === href;
+
+  const handleLogout = () => {
+    logout();
+    setIsOpen(false);
+    navigate("/");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ren-teal/95 backdrop-blur-md border-b border-ren-burgundy/20">
@@ -48,11 +58,35 @@ export function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link to="/login">
-              <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-ren-burgundy/30">
-                Einloggen
-              </Button>
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link to="/dashboard">
+                  <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-ren-burgundy/30">
+                    Profil
+                  </Button>
+                </Link>
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-ren-burgundy/30">
+                      Admin
+                    </Button>
+                  </Link>
+                )}
+                <Button
+                  variant="ghost"
+                  className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-ren-burgundy/30"
+                  onClick={handleLogout}
+                >
+                  Ausloggen
+                </Button>
+              </>
+            ) : (
+              <Link to="/login">
+                <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-ren-burgundy/30">
+                  Einloggen
+                </Button>
+              </Link>
+            )}
             <Link to="/spenden">
               <Button className="bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold px-6">
                 Jetzt spenden
@@ -101,11 +135,35 @@ export function Header() {
                 </nav>
 
                 <div className="p-6 border-t border-ren-burgundy/30 flex flex-col gap-4">
-                  <Link to="/login" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
-                      Einloggen
-                    </Button>
-                  </Link>
+                  {isLoggedIn ? (
+                    <>
+                      <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                        <Button variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
+                          Profil
+                        </Button>
+                      </Link>
+                      {isAdmin && (
+                        <Link to="/admin" onClick={() => setIsOpen(false)}>
+                          <Button variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
+                            Admin
+                          </Button>
+                        </Link>
+                      )}
+                      <Button
+                        variant="outline"
+                        className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20"
+                        onClick={handleLogout}
+                      >
+                        Ausloggen
+                      </Button>
+                    </>
+                  ) : (
+                    <Link to="/login" onClick={() => setIsOpen(false)}>
+                      <Button variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20">
+                        Einloggen
+                      </Button>
+                    </Link>
+                  )}
                   <Link to="/spenden" onClick={() => setIsOpen(false)}>
                     <Button className="w-full bg-accent hover:bg-ren-red-hover text-accent-foreground font-semibold">
                       Jetzt spenden

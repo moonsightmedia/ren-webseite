@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { HelpRequestCard } from "@/components/HelpRequestCard";
-import { helpRequests } from "@/data/helpRequests";
+import { useHelpRequests } from "@/contexts/HelpRequestsContext";
 
 export function ProjectsSection() {
-  const openRequests = helpRequests.filter((r) => r.status === "offen").slice(0, 3);
+  const { requests } = useHelpRequests();
+  const openRequests = requests.filter((r) => r.status === "offen").slice(0, 3);
 
   return (
     <section className="py-20 md:py-28 bg-ren-light">

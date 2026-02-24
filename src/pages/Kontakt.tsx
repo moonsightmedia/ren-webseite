@@ -79,7 +79,7 @@ const Kontakt = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-card-foreground mb-1">E-Mail</h3>
-                        <p className="text-ren-text-secondary text-sm">kontakt@ren-hilft.de</p>
+                        <p className="text-ren-text-secondary text-sm">info@ren-org.de</p>
                       </div>
                     </div>
                   </CardContent>
@@ -93,7 +93,7 @@ const Kontakt = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-card-foreground mb-1">Telefon</h3>
-                        <p className="text-ren-text-secondary text-sm">+49 (0) 30 12345678</p>
+                        <p className="text-ren-text-secondary text-sm">+49 1514 1474511</p>
                       </div>
                     </div>
                   </CardContent>
